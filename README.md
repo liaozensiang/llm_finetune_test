@@ -93,12 +93,6 @@ cd ../../
 
 Launch the container and start the test.
 
-**Configuration (Optional):**
-Before running, you can edit `benchmark_runner.py` to:
-
-1. Add the paths of the new models you downloaded into the MODELS dictionary.
-2. Adjust the test combinations in CONFIG_MATRIX (e.g., test longer sequences).
-
 **Run Command:**
 ```bash
 # Run the container with GPU access
@@ -109,7 +103,15 @@ sudo docker run --gpus all \
                 -v ./models:/app/models \
                 -v ./results:/app/saves \
                 xlm-benchmark:v1
+```
 
+**Configuration (Optional):**
+Before running, you can edit `benchmark_runner.py` to:
+
+1. Add the paths of the new models you downloaded into the MODELS dictionary.
+2. Adjust the test combinations in CONFIG_MATRIX (e.g., test longer sequences).
+
+```bash
 # Inside the container, start the runner
 python benchmark_runner.py
 ```
