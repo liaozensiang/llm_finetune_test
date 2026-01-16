@@ -39,6 +39,9 @@ RUN pip install flash-attn --no-build-isolation
 # 4. 複製程式碼
 COPY train_worker.py /app/
 COPY benchmark_runner.py /app/
+COPY data_handler.py /app/
+COPY env_utils.py /app/
+COPY model_loader.py /app/
 
 # 建立目錄
 RUN mkdir -p /app/saves /app/data
